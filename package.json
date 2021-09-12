@@ -1,5 +1,5 @@
 {
-  "name": "ilink-testapp",
+  "name": "ilink-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,10 +9,17 @@
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
+    "@types/react-beautiful-dnd": "^13.1.1",
     "@types/react-dom": "^17.0.0",
+    "@types/styled-components": "^5.1.14",
+    "axios": "^0.21.4",
     "react": "^17.0.2",
+    "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
     "react-scripts": "4.0.3",
+    "react-speech": "^1.0.2",
+    "styled-components": "^5.3.1",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
@@ -39,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-beautiful-dnd-grid": "^0.1.3-alpha"
   }
 }
