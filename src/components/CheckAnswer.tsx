@@ -17,7 +17,7 @@ const CheckAnswer: React.FC<props> = ({ answer, completedCards, checkResult, che
                 resultFlag ? checkFlag === "OK" ? <Text color="black">This part right</Text> :
                     checkFlag === "WRONG" ? <Text color="red">This part wrong</Text> :
                         checkFlag === "GREAT" ? <Text color="green">Great</Text> :
-                            checkFlag === " " ? " " : ' ' : " "
+                            " " : " "
             }
             <Button onClick={() => checkResult(answer, completedCards)}>Check</Button>
         </>
