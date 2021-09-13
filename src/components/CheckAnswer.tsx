@@ -7,16 +7,17 @@ interface props {
     completedCards: Card[];
     checkResult: (answer: string[], completedCards: Card[]) => void;
     checkFlag: string;
+    resultFlag: boolean;
 }
 
-const CheckAnswer: React.FC<props> = ({ answer, completedCards, checkResult, checkFlag }) => {
+const CheckAnswer: React.FC<props> = ({ answer, completedCards, checkResult, checkFlag, resultFlag }) => {
     return (
         <>
             {
-                checkFlag === "OK" ? <Text color="black">This part right</Text> :
+                resultFlag ? checkFlag === "OK" ? <Text color="black">This part right</Text> :
                     checkFlag === "WRONG" ? <Text color="red">This part wrong</Text> :
                         checkFlag === "GREAT" ? <Text color="green">Great</Text> :
-                            checkFlag === " " ? <Text color="black">No cards to check</Text> : ' '
+                            checkFlag === " " ? " " : ' ' : " "
             }
             <Button onClick={() => checkResult(answer, completedCards)}>Check</Button>
         </>
