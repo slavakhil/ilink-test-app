@@ -27,6 +27,7 @@ const App: React.FC = () => {
   const [completedCards, setCompletedCards] = useState<Card[]>([]);
   const [answer, setAnswer] = useState<string[]>([])
   const [checkFlag, setCheckFlag] = useState<string>('');
+  const [resultFlag, setResultFlag] = useState<boolean>(false);
 
   useEffect(() => {
     const getSent = async () => {
@@ -49,6 +50,7 @@ const App: React.FC = () => {
   }, []);
 
   const checkResult = (answer: string[], completedCards: Card[]) => {
+    setResultFlag(true);
     if (completedCards.length === 0) return setCheckFlag(" ")
     for (let i = 0; i < completedCards.length; i++) {
       if (completedCards[i].card !== answer[i]) {
@@ -66,11 +68,15 @@ const App: React.FC = () => {
     else return setCheckFlag("OK");
   }
 
+  
+
   const onDragEnd = (result: DropResult) => {
 
     const { destination, source } = result;
 
     console.log(result);
+
+    
 
     if (!destination) {
       return;
@@ -105,9 +111,10 @@ const App: React.FC = () => {
     if (destination.droppableId === "CardsList") {
       active.splice(destination.index, 0, add);
     } else {
+      
       complete.splice(destination.index, 0, add);
     }
-
+    setResultFlag(false);
     setCompletedCards(complete);
     sortById(active);
     setCards(active);
@@ -133,6 +140,7 @@ const App: React.FC = () => {
             completedCards={completedCards}
             checkResult={checkResult}
             checkFlag={checkFlag}
+            resultFlag={resultFlag}
           />
         </DragDropContext>
       </Wrapper>
