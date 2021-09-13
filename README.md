@@ -1,3 +1,7 @@
+### Работа с приложением
+
+Так как я пользовался библиотекой "react-beautiful-dnd", которая не предусматривает работу с Droppable областями в два ряда, то чтобы переместить карточку во второй ряд, нужно расположить её в конец первого ряда.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
