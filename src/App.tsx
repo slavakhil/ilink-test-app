@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CardsList from "./components/CardsList";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { Card } from "./models/models";
 import { getSente } from "./api";
-import { useEffect } from "react";
 import CheckAnswer from "./components/CheckAnswer";
 import user from './assets/img/user.png'
 import { Header, Image, QuestionBlock, Sentence, Wrapper } from "./styles/App.styled";
